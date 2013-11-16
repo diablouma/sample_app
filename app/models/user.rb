@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+
+  #associations
+  has_many :microposts, dependent: :destroy
+
   has_secure_password
 
   before_save { email.downcase! }
